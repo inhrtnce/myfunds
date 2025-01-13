@@ -13,11 +13,11 @@ function verifyBneficiaryDetails(){
 
   
   //BENEFICIARY FIRSTNAME
-  if (beneficiaryFirstName        ===    'keira'&& 
-      beneficiaryLastName         ===    'croft'&&
-      beneficiaryTestator         ===    'tyrion edward lannister'&&
-      beneficiaryTestatorAdress   ===    'illinois, united states'&&
-      beneficiaryLawyer           ===    'robert george'&&
+  if (beneficiaryFirstName        ===    'amanda'&& 
+      beneficiaryLastName         ===    'alexia keith'&&
+      beneficiaryTestator         ===    'brian keith'&&
+      beneficiaryTestatorAdress   ===    'california, united states'&&
+      beneficiaryLawyer           ===    'edward a.smith'&&
       beneficiaryInheritanceAmount===    '2000000'){
 
   //email and password
