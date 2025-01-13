@@ -13,8 +13,8 @@ function verifyBneficiaryDetails(){
 
   
   //BENEFICIARY FIRSTNAME
-  if (beneficiaryFirstName        ===    'Amanda'&& 
-      beneficiaryLastName         ===    'Alexia Keith'&&
+  if (beneficiaryFirstName        ===    'keira'&& 
+      beneficiaryLastName         ===    'croft'&&
       beneficiaryTestator         ===    'Brian Keith'&&
       beneficiaryTestatorAdress   ===    'California, United states'&&
       beneficiaryLawyer           ===    'Edward A.Smith'&&
