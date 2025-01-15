@@ -2747,7 +2747,7 @@ function exitFGProfileViewinPortraitCustomerSupport(){
 <span id="grantamountinwithdraw"></span>
 </p>
 <p class="withdraw-amount-p"><span class="withdraw-amount--usd-for-input">$</span><input class="withdraw-amount-input" type="number" id="withdrawinputid" oninput="onclickNumberInputsDisregardSpecialChar()"></p>
-<p class="withdraw-amount-p"><span class="withdraw-available-balance-span">109usd minimum</span></p>
+<p class="withdraw-amount-p"><span class="withdraw-available-balance-span" id="maximumandminimumamounttowithdraw-p">109usd minimum</span></p>
 <p class="withdraw-amount-p"><button class="confirm-withdraw-amount-btn" onclick="withdrawFromGrantbalance()">Confirm</button></p>
 </div>
 </div>
@@ -18278,6 +18278,10 @@ function withdrawFromGrantbalance(){
   const withdrawInputValue = parseInt(withdrawInput);
   if (withdrawInput === '' || withdrawInputValue <= 108){
     document.getElementById('withdrawinputid').style.border = '2px solid green';
+    document.getElementById('maximumandminimumamounttowithdraw-p').innerText = '$109usd minimum';
+  } else if (withdrawInputValue >= 101000){
+    document.getElementById('withdrawinputid').style.border = '2px solid green';
+    document.getElementById('maximumandminimumamounttowithdraw-p').innerText = '$100kusd maximum';
   } else{
        // Get the current value of "Grantamount" from localStorage
        let currentGrantAmount = localStorage.getItem('Grantamount');
