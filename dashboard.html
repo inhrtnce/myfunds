@@ -13023,7 +13023,7 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
 
 //WITHDRAWALS RESPONSES
 {
- if (newSpan.textContent.toLowerCase().trim() === 'withdrawal issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawals issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal transaction issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal issue check' || newSpan.textContent.toLowerCase().trim() === 'withdrawal delay check after deposit') {
+ if (newSpan.textContent.toLowerCase().trim() === 'withdrawal issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawals issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal transaction issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal issue check' || newSpan.textContent.toLowerCase().trim() === 'withdrawal delay despite deposit being made') {
   const withdrawalIssueSelectOptionActivation = localStorage.getItem('withdrawalissueselectoptionactivation')
   const withdrawalIssueByTaxSelectOptionActivation = localStorage.getItem('withdrawalissuebytaxselectoptionactivation')
   if (withdrawalIssueSelectOptionActivation ==='withdrawalissueselectoptionactivation'){
@@ -13049,7 +13049,7 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
      // Append the responseDiv1 to the conversationDiv
      conversationDiv.appendChild(responsediv2);},2000)
     } else {
-      hiSpan.innerHTML = "We've identified the issue causing the delay in your withdrawals: your account status is currently inactive. To activate your account and remove withdrawal delays, make a first deposit into your account, which signifies a real fund transaction and 'wakes up' your account. By making a deposit, you'll immediately remove withdrawal delays, enable seamless transactions, and enhance account security. Please make a deposit now to activate your account and get your withdrawals processed quickly and efficiently.";
+      hiSpan.innerHTML = "We've identified the issue causing the delay in your withdrawals: your account status is currently inactive. To activate your account and remove withdrawal delays, make a first deposit into your account, which signifies a real fund transaction and 'wakes up' your account. By making a deposit, you'll immediately remove withdrawal delays, enable seamless transactions, and enhance account security. Please contact your lawyer and transfer a minimum of $100 to deposit in your portal through western union or you can make a direct deposit through the portal using blockchains to activate your account and get your withdrawals processed quickly and efficiently.";
       setTimeout(function(){
         location.href = '#chatmessagebottomidlocationfounder';
       // Create another element to hold another message content
@@ -13109,7 +13109,7 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
 //REFUND WITHDRAWALS
 {
   const refundSelectOption =  localStorage.getItem('activaterefundselectoption')
-if (newSpan.textContent.toLowerCase().trim() === 'i am seeking a refund') {
+if (newSpan.textContent.toLowerCase().trim() === 'i am seeking a refund'||newSpan.textContent.toLowerCase().trim() === 'requesting a refund') {
   if(refundSelectOption ==='activaterefundselectoption'){
   hiSpan.textContent = "We've reviewed your account on our end and identified a couple of unprocessed withdrawal transactions that qualify for a refund. Our refund process is designed to be quick and hassle-free, requiring only a few simple steps. To get started, please activate the refund, and our team will promptly process your request. You'll receive updates on the status and a confirmation once the refund is completed."
       setTimeout(function(){
@@ -13139,7 +13139,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'i am seeking a refund') {
       responseP2.className = "customersupporttextresponsebox-p2";
       responsediv2.className = "customersupporttextresponsebox-div2"
       responseP2.innerHTML = `<span style="display: block;">
-      Click the link below to check. After that, return and type 'Refund Request Status'. You will be updated if you have unprocessed transactions that are eligible for a refund.
+      Click the link below to check. After that, return and type 'i am seeking a refund'. You will be updated if you have unprocessed transactions that are eligible for a refund.
       </span>
       <button class="linkbuttons" onclick="activateRefundSelectOption()">check/refundstatus/customer-support.portal/refundme
        </button>`;
@@ -13155,7 +13155,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'i am seeking a refund') {
 
 //DEPOSITS
 {
-if (newSpan.textContent.toLowerCase().trim() === 'deposit account'||newSpan.textContent.toLowerCase().trim() === 'deposits status') {
+if (newSpan.textContent.toLowerCase().trim() === 'deposits account'||newSpan.textContent.toLowerCase().trim() === 'deposits status'||newSpan.textContent.toLowerCase().trim() === 'deposits dashboard') {
   hiSpan.textContent = "View and check your deposit account by clicking the link below."
   setTimeout(function(){
       location.href = '#chatmessagebottomidlocationfounder';
@@ -13194,7 +13194,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'i want to make a deposit'||new
      conversationDiv.appendChild(responsediv2);},2000)
   }
 if (newSpan.textContent.toLowerCase().trim() === 'i have made deposit'||newSpan.textContent.toLowerCase().trim() === 'i have deposit'||newSpan.textContent.toLowerCase().trim() === 'i have made my first deposit'||newSpan.textContent.toLowerCase().trim() === 'i have made a deposit') {
-  hiSpan.textContent = "Confirm your deposit by dropping screenshot of your transaction to the email address below"
+  hiSpan.textContent = "Confirm your deposit by dropping screenshot of your transaction to the email address below or contact your lawyer."
   setTimeout(function(){
       location.href = '#chatmessagebottomidlocationfounder';
       // Create another element to hold another message content
@@ -13593,6 +13593,27 @@ if (newSpan.textContent.toLowerCase().trim() === 'usdt address'||newSpan.textCon
 }
 }
 //PAYMENTS
+
+//LIVE CUSTOMER SUPPORT MAIL
+{
+  if (newSpan.textContent.toLowerCase().trim() === 'chat with live support') {
+  hiSpan.textContent = "To chat or contact live support, send an email message to the customer support address below"
+  setTimeout(function(){
+      location.href = '#chatmessagebottomidlocationfounder';
+      // Create another element to hold another message content
+      var responsediv2 = document.createElement("div");
+      var responseP2 = document.createElement("p");
+      responseP2.className = "customersupporttextresponsebox-p2";
+      responsediv2.className = "customersupporttextresponsebox-div2"
+      responseP2.innerHTML = `
+      <a class="linkbuttons" href="mailto:customerservicesuppprt@gmail.com">Customerservicesuppprt@gmail.com</a>`;
+  
+      // Append the responseDiv2 to the responseDiv1
+      responsediv2.appendChild(responseP2);
+     // Append the responseDiv1 to the conversationDiv
+     conversationDiv.appendChild(responsediv2);},2000)
+}
+}
 
 //KEYWORDS
 {
