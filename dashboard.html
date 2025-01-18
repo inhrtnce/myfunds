@@ -9893,7 +9893,7 @@ document.getElementById('makedeposittousdtcontinuebutton-p').style.display = 'bl
   <option id="depositreceiptfromrampoption" value="Ramp">Ramp</option>
 </select>
 <p style="width: 200px; font-size: 10px;" id="depositdetailsconfirmingwarningnote"><span style="font-weight: bold;">Note:</span> Please confirm that your deposit details are correct and valid. We will verify this information to ensure a smooth update to your dashboard.</p>
-<p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><button onclick="confirmandSaveDepositReceipt()">confirm</button></p>
+<p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><button onclick="confirmandSaveDepositReceiptt()">confirm</button></p>
 </div><!--RECEIPT-->
 <!--important note-->
 <div id="importantnotefordepositreceiptdetailsinfo" class="depositandtaxreceiptupdatereceipt importantnotefordepositreceiptdetailsinfo" style="display: none;">
@@ -13247,6 +13247,9 @@ if (newSpan.textContent.toLowerCase().trim() === 'confirm my deposit receipt' ||
   document.getElementById('importantnotefortaxreceiptdetailsinfo').style.display = 'none';
   document.getElementById('taxreceiptsubmittednotification').style.display = 'none';
       ;},5000)
+}
+if (newSpan.textContent.toLowerCase().trim() === 'deposit made' || newSpan.textContent.toLowerCase().trim() === 'i have deposited in my portal account so what next?' || newSpan.textContent.toLowerCase() === 'i have made a deposit') {
+  hiSpan.textContent = "Congratulations! Now that you've made a deposit, your account is active and processed. Any withdrawals you make will be deposited into your bank account within 24 hours. You can now proceed to make a withdrawal of any amount you wish. Congratulations!";
 }
 }
 //DEPOSITS
