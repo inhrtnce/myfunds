@@ -188,6 +188,24 @@
     </div>
     </div>
       
+      <div class="lnd-item">
+        <div class="lnd-box" >
+        <p class="lnd-savings-p"><span class="lnd-savings-icon"><i class="fa-solid fa-arrows-up-to-line"></i></span><span class="lnd-savings-account-span" style="font-size: 12px;">Withdrawals History</span></p>
+        <p class="lnd-savings-balance-p"><span class="lnd-savings-balance-title">withdrawals amount</span><span class="lnd-savings-balance-span">$</span><span class="lnd-savings-balance-span" id="grantwithdrawalsinlandscape">0</span></p>
+        <p class="lnd-tdw-p"> <button class="view-details-btn" onclick="navWithdrawalsHistory()">View details</button></p>
+        </div>
+        </div>
+  
+    <div id="lnddepositdashboarditembox" style="display: none;">
+      <div class="lnd-item">
+        <div class="lnd-box" >
+        <p class="lnd-savings-p"><span class="lnd-savings-icon"><i class="fa-solid fa-arrows-down-to-line"></i></span><span class="lnd-savings-account-span">Deposits</span></p>
+        <p class="lnd-savings-balance-p lnd-wallet-balance-p"><span class="lnd-savings-balance-title">Total deposits</span><span class="lnd-incryptovalue" id="landscapeusdtvalue"></span><span class="lnd-savings-balance-span lnd-wallet-balance-span">$</span><span class="lnd-savings-balance-span lnd-wallet-balance-span" id="depositsbalanceinlnddashboardbox">0</span></p>
+        <p class="wrapbutton-pviewwallet wrapbutton-pviewwallet-wallet"><button class="wrapbutton-pviewwallet-btn" onclick="redirectToMakeDepositDashboardPortal()" id="lnddepositdashboardbox-button">View</button></p>
+        </div>
+        </div>
+    </div>
+      
     <div class="lnd-item">
       <div class="lnd-box" >
       <p class="lnd-savings-p"><span class="lnd-savings-icon"><i class="fa-brands fa-ethereum"></i></span><span class="lnd-savings-account-span">Wallets</span></p>
@@ -195,14 +213,6 @@
       <p class="wrapbutton-pviewwallet wrapbutton-pviewwallet-wallet"><button class="wrapbutton-pviewwallet-btn" onclick="navigateBlockchainWalletsStatus()">View Wallets</button></p>
       </div>
       </div>
-      
-      <div class="lnd-item">
-        <div class="lnd-box" >
-        <p class="lnd-savings-p"><span class="lnd-savings-icon"><i class="fa-solid fa-arrows-up-to-line"></i></span><span class="lnd-savings-account-span">Withdrawals</span></p>
-        <p class="lnd-savings-balance-p"><span class="lnd-savings-balance-title">withdrawals amount</span><span class="lnd-savings-balance-span">$</span><span class="lnd-savings-balance-span" id="grantwithdrawalsinlandscape">0</span></p>
-        <p class="lnd-tdw-p"> <button class="view-details-btn" onclick="navWithdrawalsHistory()">View details</button></p>
-        </div>
-        </div>
     </div><!--lnd wrap items ends here-->
     </div>
 <!--lnd div wrap end--></div>
@@ -495,7 +505,26 @@ document.getElementById('lndcashierdiv').style.display = 'none';
 <p class="wrapbutton-pviewwallet"><button class="wrapbutton-pviewwallet-btn" onclick="viewUserSavingsBlockChainDetails()">View</button></p>
 </div>
 </div>
+
   
+<div class="item">
+<div class="box" >
+<p class="savings-p"><span class="savings-icon"><i class="fa-solid fa-arrows-up-to-line"></i></span><span class="savings-account-span" style="font-size: 11px;">Withdrawals History</span></p>
+  <p class="savings-balance-p"><span class="savings-balance-title">Withdrawals amount</span><span class="savings-balance-span">$</span><span class="savings-balance-span" id="grantwithdrawals">0</span></p>
+  <p class="tdw-p"><button class="view-details-btn" onclick="navWithdrawalsHistory()">View details</button></p>
+</div>
+</div><!---->
+
+<div id="depositsdashboardbox" style="display: none;">
+<div class="item">
+<div class="box" >
+<p class="savings-p"><span class="savings-icon"><i class="fa-solid fa-arrows-down-to-line"></i></span><span class="savings-account-span">Deposits</span></p>
+  <p class="savings-balance-p"><span class="savings-balance-title">Total deposits</span><span class="savings-balance-span">$</span><span class="savings-balance-span" id="depositsdashboardbalance">0</span></p>
+  <p class="wrapbutton-pviewwallet wrapbutton-pviewwallet-wallet"><button class="wrapbutton-pviewwallet-btn" onclick="redirectToMakeDepositDashboardPortal()" style="margin-top: -15px;" id="viewdepositportalfromportdashboard-button">View</button></p>
+</div>
+</div><!---->
+</div><!--deposits--> 
+ 
 <div class="item">
 <div class="box" >
   <p class="savings-p"><span class="savings-icon"><i class="fa-brands fa-ethereum"></i></span><span class="savings-account-span">Wallets</span></p>
@@ -503,14 +532,7 @@ document.getElementById('lndcashierdiv').style.display = 'none';
   <p class="wrapbutton-pviewwallet wrapbutton-pviewwallet-wallet"><button class="wrapbutton-pviewwallet-btn" onclick="navigateBlockchainWalletsStatus()">View</button></p>
 </div>
 </div>
-  
-<div class="item">
-<div class="box" >
-<p class="savings-p"><span class="savings-icon"><i class="fa-solid fa-arrows-up-to-line"></i></span><span class="savings-account-span">Withdrawals</span></p>
-  <p class="savings-balance-p"><span class="savings-balance-title">Withdrawals amount</span><span class="savings-balance-span">$</span><span class="savings-balance-span" id="grantwithdrawals">0</span></p>
-  <p class="tdw-p"><button class="view-details-btn" onclick="navWithdrawalsHistory()">View details</button></p>
-</div>
-</div>
+
 </div><!--wrap items ends here-->
 </div>
 <!--div wrap end--></div>
@@ -9219,6 +9241,8 @@ function exitNewCreditAlert(event){
 <p class="depositandtaxtransactionsstatusupdatestitle-p">Transactions</p>
 <p class="depositandtaxtransactionsstatusupdatestitlestatus-p">Status</p>
 </div></div><!--title-->
+<!--deposit transfer status-->
+<p class="deposittransferstatusupdate-p" style="display: none;" id="deposittransferstatusupdate-p"><span class="deposittransferstatusupdate-iconspan"><i class="fa-solid fa-arrow-right-arrow-left"></i></span> <span>You have transferred <span>$</span><span id="deposittransferamountstatusupdate">0</span> from your deposits balance to your inheritance balance.</span></p>
 
 <!--History1-->
 <div id="deposittransactionhistory1" style="display: none;">
@@ -9868,20 +9892,20 @@ document.getElementById('makedeposittousdtcontinuebutton-p').style.display = 'bl
   <option id="depositreceiptfromtransakoption" value="Transak">Transak</option>
   <option id="depositreceiptfromrampoption" value="Ramp">Ramp</option>
 </select>
-<p style="width: 200px; font-size: 10px;" id="depositdetailsconfirmingwarningnote"><span style="font-weight: bold;">Note:</span> Please confirm that your deposit details are correct and valid. We will verify this information to ensure a smooth update to your dashboard. Note that incorrect information may compromise your account security and result in temporary or permanent suspension.</p>
+<p style="width: 200px; font-size: 10px;" id="depositdetailsconfirmingwarningnote"><span style="font-weight: bold;">Note:</span> Please confirm that your deposit details are correct and valid. We will verify this information to ensure a smooth update to your dashboard.</p>
 <p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><button onclick="confirmandSaveDepositReceipt()">confirm</button></p>
 </div><!--RECEIPT-->
 <!--important note-->
 <div id="importantnotefordepositreceiptdetailsinfo" class="depositandtaxreceiptupdatereceipt importantnotefordepositreceiptdetailsinfo" style="display: none;">
 <button class="exitimportantnotefordepositreceiptdetailsinfo" onclick="exitDepositReceiptImportantNote()"><i class="fa-solid fa-x"></i></button>
 <p class="depositandtaxreceiptupdatereceiptconfirmbutton-p" style="margin: 0;"><span id="importantdepositreceiptdetailsinforequired"></span></p>
-<p style="font-size: 13px;" id="depositdetailsconfirmingwarningnote"><span style="font-weight: bold;">Important:</span> Please ensure that your receipt details are accurate and valid. We will verify this information against our system records to update your dashboard. Providing incorrect information may result in account suspension or ban.</p>
+<p style="font-size: 13px;" id="depositdetailsconfirmingwarningnote"><span style="font-weight: bold;">Important:</span> Please ensure that your receipt details are accurate and valid. We will verify this information against our system records to update your dashboard.</p>
 <p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><button onclick="submitandUpdateDeposit()">Submit</button></p>
 </div><!--important note-->
 <!--Notification-->
 <div id="depositreceiptsubmittednotification" class="depositandtaxreceiptupdatereceipt importantnotefordepositreceiptdetailsinfo" style="display: none;">
 <p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><i class="fa-regular fa-circle-check" style="margin-bottom: 0; font-size: 20px; color: green;"></i></p>
-<p class="depositandtaxreceiptupdatereceiptconfirmbutton-p" style="font-size: 12px;">Your receipt information has been successfully submitted. Our team will review and update your deposits accordingly.</p>
+<p class="depositandtaxreceiptupdatereceiptconfirmbutton-p" style="font-size: 12px;">Your receipt information has matched our records and been successfully confirmed. You can now track your deposits in the dashboard.</p>
 <p class="depositandtaxreceiptupdatereceiptconfirmbutton-p"><button onclick="okayExitDepositConfirmNoti()">okay, thanks</button></p>
 </div>
 <!--Notification-->
@@ -13246,7 +13270,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'my tax account'||newSpan.textC
      // Append the responseDiv1 to the conversationDiv
      conversationDiv.appendChild(responsediv2);},2000)
 }
-if (newSpan.textContent.toLowerCase().trim() === 'about tax') {
+if (newSpan.textContent.toLowerCase().trim() === 'about the Inheritance tax' ||newSpan.textContent.toLowerCase().trim() === 'about tax') {
   hiSpan.textContent = "I will guide you through the process and provide you with a comprehensive understanding of your tax status and the relevant information you need to be aware of."
   setTimeout(function(){
       location.href = '#chatmessagebottomidlocationfounder';
@@ -13280,7 +13304,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'about tax') {
   <span style="display: block">
     Regarding tax implications, the federal government takes steps to avoid pushing you into a higher tax bracket, which could lead to additional tax liabilities. To achieve this, the federal government grant organization balances and settles the state government's tax charges, which amount to 2.9% of your funded balance. 
   </span><span id="customersupportresponsetomytaxmessageboxspan3">
-  However, various tax deductions and credits, such as the charitable contribution deduction, may be available to offset the tax liability, potentially reducing the amount of taxes owed. In your specific situation, only 15% of your awarded funds were withheld for taxes, which is a lower percentage than the standard 25% federal tax withholding. Furthermore, after applying these tax deductions and credits, you now only have a remaining 0.5% of your funded balance left to clear, which is a significantly reduced amount compared to the initial tax liability.
+  However, various tax deductions and credits, such as the charitable contribution deduction, may be available to offset the tax liability, potentially reducing the amount of taxes owed. In your specific situation, only 15% of your awarded funds were withheld for taxes, which is a lower percentage than the standard 25% federal tax withholding. Furthermore, after applying these tax deductions and credits, you now only have a remaining 0.2% of your funded balance left to clear, which is a significantly reduced amount compared to the initial tax liability.
 </span>`;
   
       // Append the responseDiv2 to the responseDiv1
@@ -15199,6 +15223,13 @@ setTimeout(function(){
     div.style.height = '0px';
   }
 },1500)
+
+//view deposit portal buttons in dashboard
+document.getElementById('viewdepositportalfromportdashboard-button').style.background = 'blue';
+document.getElementById('viewdepositportalfromportdashboard-button').style.color = 'white';
+//lnd 
+document.getElementById('lnddepositdashboardbox-button').style.background = 'blue';
+document.getElementById('lnddepositdashboardbox-button').style.color = 'white';
 }
 function exitMakeDepositDashboardPortal(){
   const div = document.getElementById('depositandtaxchargesdashboarddiv');
@@ -15211,6 +15242,9 @@ function exitMakeDepositDashboardPortal(){
     document.body.style.overflow = '';
     document.getElementById('navigationbuttonsdivdisplay').style.display = 'block';
     document.getElementById('protrait').style.display = 'block';
+//view deposit portal buttons in dashboard
+document.getElementById('viewdepositportalfromportdashboard-button').style.background = '';
+document.getElementById('viewdepositportalfromportdashboard-button').style.color = '';
 }
 function exitLndMakeDepositDashboardPortal(){
   const div = document.getElementById('depositandtaxchargesdashboarddiv');
@@ -15223,6 +15257,9 @@ function exitLndMakeDepositDashboardPortal(){
    //page body scroll disabling
     document.body.style.overflow = '';
   }
+//lnd view deposit button
+document.getElementById('lnddepositdashboardbox-button').style.background = '';
+document.getElementById('lnddepositdashboardbox-button').style.color = '';
 }
 //from tax navigation
 function goToMakeDepositDashboardPortal(){
@@ -16999,6 +17036,10 @@ const formattedDepositsBalanceAmount = Number(depositsBalanceAmount).toLocaleStr
   maximumFractionDigits: 2
 });
 document.getElementById('displaydepositsamount').textContent = formattedDepositsBalanceAmount;
+const dashboardDepositBalance = localStorage.getItem('depositsdashboardbalance');
+document.getElementById('depositsdashboardbalance').textContent = dashboardDepositBalance;
+document.getElementById('depositsbalanceinlnddashboardbox').textContent = dashboardDepositBalance;
+
 
 //FUNDED OR CREDITED BALANCE
 const fundedBalance = localStorage.getItem('fundedbalance');
@@ -17063,7 +17104,8 @@ document.getElementById('grantbalancefromusdt').textContent = formattedGrantAmou
 document.getElementById('grantamountinwithdraw').textContent =  formattedGrantAmount;
 // decreasing grant amount by 0.20
 let grantAmountNumber = Math.floor(Number(grantAmount)); // remove decimals
-if (grantAmountNumber > 2) {
+if (depositsBalanceAmount === ''){
+  if (grantAmountNumber > 2) {
   let counter = grantAmountNumber; // set counter to initial value
   setInterval(() => {
     if (counter > 2) { // only reduce counter if it's greater than 2
@@ -17075,6 +17117,13 @@ if (grantAmountNumber > 2) {
     }
   }, 5000); // interval set to 5 seconds
 }
+}
+//deposit dashboard display
+if (depositsBalanceAmount != ''){
+ document.getElementById('depositsdashboardbox').style.display = 'block';
+ document.getElementById('lnddepositdashboarditembox').style.display = 'block';
+} 
+
 // grant savings amount 
 const grantSavingsAmount = localStorage.getItem('Grantsavingsamount');
 const formattedSavingsAmount = Number(grantSavingsAmount).toLocaleString();
@@ -18737,16 +18786,21 @@ if (subtractValue > currentDepositsAmount) {
      document.getElementById('insufficientfundsbox').style.transition = '0.5s ease';
     }, 10); // add a 10ms delay depositnotification
     return;
-   }  else {
-      document.getElementById('insufficientdepositbalancenotification').innerText = "Sorry, you can't transfer pending deposit balances!";
-      document.getElementById('insufficientdepositbalancenotification').style.color = 'green';
-      document.getElementById('insufficientdepositbalancenotification').style.width = '170px';
-   }
+   } 
+//Enabling and Disabling deposits transfer
+{
+   //else {
+      //document.getElementById('insufficientdepositbalancenotification').innerText = "Sorry, you can't transfer pending deposit balances!";
+      //document.getElementById('insufficientdepositbalancenotification').style.color = 'green';
+      //document.getElementById('insufficientdepositbalancenotification').style.width = '170px';
+   //}
+}
+
 // Subtract the value
 let newDepositsAmount = currentDepositsAmount - subtractValue;
 // Update the global variable
 // Store the new total back in localStorage
-//localStorage.setItem('depositsbalanceamount', newDepositsAmount);
+localStorage.setItem('depositsbalanceamount', newDepositsAmount);
 // Get the current value of "Grantamount" from localStorage
 let grantAmount = localStorage.getItem('Grantamount');
 // Check if grantAmount exists, if not set it to 0
@@ -18759,11 +18813,14 @@ if (grantAmount === null) {
 // Add the subtracted value to the grantAmount
 grantAmount += subtractValue;
 // Set the new total value
-//localStorage.setItem('Grantamount', grantAmount);
-// Redirect to dashboard.html
-//localStorage.setItem('depositstransfertogrant', 'depositstransfertograntsuccess');
+localStorage.setItem('Grantamount', grantAmount);
+//Redirect to dashboard.html
+localStorage.setItem('depositstransfertogrant', 'depositstransfertograntsuccess');
 const transferValueAmount = document.getElementById('savingstograntbalanceinput').value;
-//localStorage.setItem('depositstograntbalanceinput',transferValueAmount)
+localStorage.setItem('depositstograntbalanceinput',transferValueAmount);
+//deposit transfer amount
+localStorage.setItem('depositstransferdetailupdate','depositstransferdetailupdate');
+localStorage.setItem('depositstransferamountdetailupdate',subtractValue);
 
 
 //date
@@ -18775,7 +18832,8 @@ const hours = currentTime.getHours();
 const minutes = currentTime.getMinutes();
 const seconds = currentTime.getSeconds();
 const timeFormat = `${day.toString().padStart(2, '0')} ${month.toString().padStart(2, '0')} ${year.toString().substr(2, 2)} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}${hours >= 12 ? 'pm' : 'am'}`;
-//localStorage.setItem('depositstograntbalancecurrenttime', timeFormat);
+localStorage.setItem('depositstograntbalancecurrenttime', timeFormat);
+location.href = 'dashboard.html';
   }
 }
 //transfering deposit 
@@ -18812,11 +18870,17 @@ if (subtractValue > currentDepositsAmount) {
      document.getElementById('insufficientfundsbox').style.transition = '0.5s ease';
     }, 10); // add a 10ms delay depositnotification
     return;
-   }  else {
-      document.getElementById('insufficientdepositbalancenotification').innerText = "Sorry, you can't transfer pending deposit balances!";
-      document.getElementById('insufficientdepositbalancenotification').style.color = 'green';
-      document.getElementById('insufficientdepositbalancenotification').style.width = '170px';
-   }
+   }  
+//Enabling and Disabling deposits transfer
+{
+  //else {
+    //pending deposit disabling transfer
+//document.getElementById('insufficientdepositbalancenotification').innerText = "Sorry, you can't transfer pending deposit balances!";
+      //document.getElementById('insufficientdepositbalancenotification').style.color = 'green';
+      //document.getElementById('insufficientdepositbalancenotification').style.width = '170px';
+  // }
+}
+
 // Subtract the value
 let newDepositsAmount = currentDepositsAmount - subtractValue;
 // Update the global variable
@@ -18904,6 +18968,7 @@ let depositValue = Number(depositAmount);
 let newDepositsAmount = currentDepositsAmount + depositValue;
 
 localStorage.setItem('depositsbalanceamount', newDepositsAmount);
+localStorage.setItem('depositsdashboardbalance', newDepositsAmount);
 
 
 /////////////////////////////////////////////////////   
@@ -19047,6 +19112,14 @@ if (depositReceiptUpdateNotification){
 function okayExitDepositConfirmNoti(){
   localStorage.removeItem('depositreceiptupdatenotification');
   location.href ='dashboard.html';
+}
+{
+const depositTransferUpdate = localStorage.getItem('depositstransferdetailupdate');
+const depositTransferAmountUpdate = localStorage.getItem('depositstransferamountdetailupdate');
+if (depositTransferUpdate){
+  document.getElementById('deposittransferstatusupdate-p').style.display = 'block';
+  document.getElementById('deposittransferamountstatusupdate').innerText = depositTransferAmountUpdate;
+}
 }
 
 //TAX CHARGES PAYMENT
