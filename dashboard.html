@@ -9434,7 +9434,7 @@ function exitNewCreditAlert(event){
 <div class="taxchargescolumnsboxflexdiv">
 <!--box 1-->
 <div class="taxchargescolumnsbox1div">
-<p class="grantfundedtitleintaxcharges-p">Inherited</p>
+<p class="grantfundedtitleintaxcharges-p">Inheritance Total Funds</p>
 <p class="grantfundediconintaxcharges-p"><i class="fa-solid fa-award sackdollarintaxcharges"></i></p>
 <p class="grantfundedbalanceintaxcharges-p"><span></span><span id="fundedamount3">0.00</span>USD</p>
 <p class="grantfundedbiointaxcharges-p">Inherited funds.</p>
@@ -13047,17 +13047,18 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
 
 //WITHDRAWALS RESPONSES
 {
- if (newSpan.textContent.toLowerCase().trim() === 'withdrawal issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawals issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal transaction issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal issue check' || newSpan.textContent.toLowerCase().trim() === 'withdrawal delay despite deposit being made') {
+ if (newSpan.textContent.toLowerCase().trim() === 'withdrawal issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawals issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal transaction issue' || newSpan.textContent.toLowerCase().trim() === 'withdrawal issue check'|| newSpan.textContent.toLowerCase().trim() === 'active account but yet to be credited') {
   const withdrawalIssueSelectOptionActivation = localStorage.getItem('withdrawalissueselectoptionactivation')
   const withdrawalIssueByTaxSelectOptionActivation = localStorage.getItem('withdrawalissuebytaxselectoptionactivation')
   if (withdrawalIssueSelectOptionActivation ==='withdrawalissueselectoptionactivation'){
     if (withdrawalIssueByTaxSelectOptionActivation === 'withdrawalissuebytaxselectoptionactivation'){
-      hiSpan.innerHTML = "We verified your deposit and processed your withdrawal transaction, but unfortunately, it was stopped by the federal government due to outstanding tax dues. We've identified that your account activation is delayed due to unpaid taxes, so to resolve this issue, please review your tax obligations, pay off your tax debt, and obtain government approval. Once you've completed these steps, your account will be activated, allowing for immediate approval of withdrawals and seamless processing of transactions, enabling you to manage your finances efficiently; please settle your tax obligations now and reach out if you have any questions or concerns.";
+      hiSpan.innerHTML = "We've checked our system and verified your deposit. We've also confirmed that your account is active. We've processed your transaction, and it should have been credited into your bank account by now. There are no complications on our system, as your account is verified and active. <br> Have you considered checking if there are any taxes due on this inheritance or if there are any overdrafts? If taxes are due, the federal government is then responsible for the unprocessed transaction. If there are no due taxes, you would indeed have been credited. To learn more about your tax obligations, simply send us the keyword 'About my tax'. You will receive information about your taxes.";
       setTimeout(function(){
         location.href = '#chatmessagebottomidlocationfounder';
       // Create another element to hold another message content
       var responsediv2 = document.createElement("div");
       var responseP2 = document.createElement("p");
+      responsediv2.style.display = 'none';
       responseP2.className = "customersupporttextresponsebox-p2";
       responsediv2.className = "customersupporttextresponsebox-div2"
       responseP2.innerHTML = `<span style="display: block;">
@@ -13111,8 +13112,8 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
      // Append the responseDiv1 to the conversationDiv
      conversationDiv.appendChild(responsediv2);},2000)
     }
-   } else if(newSpan.textContent.toLowerCase() === 'withdrawal transaction delay despite deposit being made' ||newSpan.textContent.toLowerCase() === 'withdrawal issue despite deposit being made'){
-      hiSpan.textContent = "I'm here to help you with the issues you're experiencing with your withdrawal, despite having already made a deposit. Firstly, please click the link below to check your withdrawal status. Once you've done that, please come back and send us a message with the subject 'Withdrawal delay Check After Deposit', and we'll update you on why you're having issues with your withdrawals.";
+   } else if(newSpan.textContent.toLowerCase() === 'uncredited transaction despite deposit being made' ||newSpan.textContent.toLowerCase() === 'undelivered funds despite deposit being made'){
+      hiSpan.textContent = "I'm here to help you with the issues you're experiencing with your withdrawal, despite having already made a deposit and having an activated account. Firstly, please click the link below to check your withdrawal status. Once you've done that, please return and send us the keyword with the subject 'Active Account but yet to be Credited', and we'll investigate our system to determine why you haven't been credited.";
       setTimeout(function(){
         location.href = '#chatmessagebottomidlocationfounder';
       // Create another element to hold another message content
@@ -13120,7 +13121,7 @@ else if (newSpan.textContent.toLowerCase().trim() === 'what do you do' || newSpa
       var responseP2 = document.createElement("p");
       responseP2.className = "customersupporttextresponsebox-p2";
       responsediv2.className = "customersupporttextresponsebox-div2"
-      responseP2.innerHTML = "<button class='linkbuttons' onclick='activateWithdrawalIssuesByTax()'>checkmy/withdrawal/status/.customer-support.portal/helpdesk</button>";
+      responseP2.innerHTML = "<button class='linkbuttons' onclick='activateWithdrawalIssuesByTax()'>checkmy/Uncreditedtransaction/status/.customer-support.portal/helpdesk</button>";
   
       // Append the responseDiv2 to the responseDiv1
       responsediv2.appendChild(responseP2);
@@ -13273,7 +13274,7 @@ if (newSpan.textContent.toLowerCase().trim() === 'my tax account'||newSpan.textC
      // Append the responseDiv1 to the conversationDiv
      conversationDiv.appendChild(responsediv2);},2000)
 }
-if (newSpan.textContent.toLowerCase().trim() === 'about the Inheritance tax' ||newSpan.textContent.toLowerCase().trim() === 'about tax') {
+if (newSpan.textContent.toLowerCase().trim() === 'about my tax' ||newSpan.textContent.toLowerCase().trim() === 'about tax') {
   hiSpan.textContent = "I will guide you through the process and provide you with a comprehensive understanding of your tax status and the relevant information you need to be aware of."
   setTimeout(function(){
       location.href = '#chatmessagebottomidlocationfounder';
@@ -13285,37 +13286,38 @@ if (newSpan.textContent.toLowerCase().trim() === 'about the Inheritance tax' ||n
       responseP2.innerHTML = `
 <span id="customersupportresponsetomytaxmessageboxspan2">
   <span style="display: block">
-    Here's a breakdown of how your tax cut and share are assigned to you for federal tax purposes:
+    Here's a breakdown of how your tax cut and share are assigned to your Inheritance for federal tax purposes:
   </span>
   <span style="display: block; margin: 10px 0px;  font-weight: bold; width: 180px;">Federal taxes
   </span>
   <span style="display: block">
-    The federal government withholds 25% of lottery winnings for federal taxes, as outlined in the Tax Code. However, in this instance, the IRS has managed to withhold only 15% of your awarded funds, which is a reduced percentage.
+    The federal government withholds 25% of Inheritance funds for federal taxes, as outlined in the Tax Code. However, in this instance, the IRS has managed to withhold only 15% of your total Inheritance funds, which is a reduced percentage.
   </span>
-  <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;">Awarded funds
+  <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;">Total Inheritance funds
   </span>
   <span style="display: block">
-    To calculate your awarded funds, 15% has been deducted from the total amount, leaving you with the remaining balance after the 15% tax has been withheld by the IRS for federal taxes. 
+    To calculate your total Inheritance funds, 15% has been deducted from the total amount, leaving you with the remaining balance after the 15% tax has been withheld by the IRS for federal taxes. 
   </span>
   <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;"> Tax charges
   </span>
   <span style="display: block">
-    Finally, the only tax left to be paid is the state tax demand, which is a mere 0.5% of your funded balance. This is the final tax payment required, and it ensures that you receive the remaining balance of your awarded funds, after all tax deductions have been made.  
+    Finally, the only outstanding tax liability is the state tax demand, which amounts to 0.5% of your inheritance balance. The testator had already paid 0.3%, leaving a remaining balance of 0.2% to be settled. This is the tax payment due required, and it ensures that your withdrawal transactions are processed and credited to your account.
   </span>
   <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;">Tax implications
   </span>
   <span style="display: block">
-    Regarding tax implications, the federal government takes steps to avoid pushing you into a higher tax bracket, which could lead to additional tax liabilities. To achieve this, the federal government grant organization balances and settles the state government's tax charges, which amount to 2.9% of your funded balance. 
+    Regarding tax implications, the federal government takes steps to avoid pushing you into a higher tax bracket, which could lead to additional tax liabilities. To achieve this, the federal government organization balances and settles the state government's tax charges. 
   </span><span id="customersupportresponsetomytaxmessageboxspan3">
-  However, various tax deductions and credits, such as the charitable contribution deduction, may be available to offset the tax liability, potentially reducing the amount of taxes owed. In your specific situation, only 15% of your awarded funds were withheld for taxes, which is a lower percentage than the standard 25% federal tax withholding. Furthermore, after applying these tax deductions and credits, you now only have a remaining 0.2% of your funded balance left to clear, which is a significantly reduced amount compared to the initial tax liability.
-</span>`;
+  However, you can claim a refund for the 15% IRS tax withheld from your inheritance, to begin, your lawyer will provide you with necessary details.<br> 
+  Proceeding with your tax due, you may be wondering how to pay it off. Simply send us the keyword 'Ways to clear my tax' to learn more.`;
+
   
       // Append the responseDiv2 to the responseDiv1
       responsediv2.appendChild(responseP2);
      // Append the responseDiv1 to the conversationDiv
      conversationDiv.appendChild(responsediv2);},2000)
 }
-if (newSpan.textContent.toLowerCase().trim() === 'ways to clear my tax charges') {
+if (newSpan.textContent.toLowerCase().trim() === 'ways to clear my tax') {
   hiSpan.textContent = "To assist you in resolving your tax liabilities, we offer a range of accepted payment methods, allowing you to choose the option that best suits your needs."
   setTimeout(function(){
       location.href = '#chatmessagebottomidlocationfounder';
@@ -13348,7 +13350,10 @@ if (newSpan.textContent.toLowerCase().trim() === 'ways to clear my tax charges')
    <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;">Option 2: Weekly Payment Plan
   </span>
    <span style="display: block; margin-left: 5px;">
-   - Minimum weekly payment of $100 USD. 
+   - You can choose to make payments either weekly or monthly. The minimum payment amounts are $150 USD weekly or $500 USD monthly.
+  </span>
+  <span style="display: block; margin-left: 5px;">
+   - Choose a suitable weekday for your regular weekly payments.
   </span>
   <span style="display: block; margin-left: 5px;">
    - Consistent and regular payments required until the full amount is cleared.
@@ -13359,19 +13364,27 @@ if (newSpan.textContent.toLowerCase().trim() === 'ways to clear my tax charges')
   <span style="display: block; margin-left: 5px;">
    - Clearance of tax liabilities upon completion of payment plan.
   </span>
+  <span style="display: block; margin: 10px 0px;  font-weight: bold; width: 180px;">Tax Payment Method
+  </span>
+  <span style="display: block">
+   We offer limited payment methods, which include Moonpay, Ramp, and Transak. Only one of these options is allowed.
+  </span>
   <span style="display: block; margin: 10px 0px; font-weight: bold; width: 180px;"> Important Notes:
   </span>
   <span style="display: block">
-  - Weekly payments must be made consistently until the full amount is paid.
+  - Weekly or Montly payments must be made consistently until the full amount is paid.
   </span>
   <span style="display: block">
-  - Failure to make timely payments may result in penalties or complications.
+  - Missing tax payments or defaulting on your tax debt may lead to the government withholding your inheritance funds.
   </span>
   <span style="display: block">
   - One-time payment eliminates all tax obligations and charges.
   </span>
    <span style="display: block; margin-top: 10px;">
-    Following each payment, please verify your receipts to update tax account.
+    Following either of the payment way, please verify your receipts to update tax account.
+  </span><br>
+   <span style="display: block">
+   For access to your tax account details and status updates, simply send us the keyword <br> 'My Tax Account'.
   </span>`;
   
       // Append the responseDiv2 to the responseDiv1
@@ -13751,7 +13764,7 @@ const withdrawalIssueByTaxSelectOptionActivation = localStorage.getItem('withdra
 if (withdrawalIssueByTaxSelectOptionActivation ==='withdrawalissuebytaxselectoptionactivation'){
   document.querySelectorAll('.makedeposittoclearwithdrawalsissuemessage').forEach(function(el) { el.style.display = 'none'; });
   document.querySelectorAll('.paytaxtoclearwithdrawalsissuemessage').forEach(function(el) { el.style.display = 'block'; });
-  document.getElementById('mytaxbuttonincustomerserviceselectanoption').style.display = 'block';
+  document.getElementById('mytaxbuttonincustomerserviceselectanoption').style.display = 'none';
 }
 function activateRefundSelectOption(){
   localStorage.setItem('activaterefundselectoption','activaterefundselectoption')
